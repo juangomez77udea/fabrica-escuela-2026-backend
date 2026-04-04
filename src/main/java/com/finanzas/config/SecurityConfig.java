@@ -21,7 +21,11 @@ public class SecurityConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:5173", "http://localhost:3000", "https://fabrica-escuela-2026-frontend-h85nprheh.vercel.app")
+                        .allowedOriginPatterns(
+                                "http://localhost:5173",
+                                "http://localhost:3000",
+                                "https://fabrica-escuela-2026-frontend*.vercel.app"
+                        )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
             }
