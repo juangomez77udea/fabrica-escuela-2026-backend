@@ -1,22 +1,14 @@
 package com.finanzas.transaction;
 
-import java.util.List;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.finanzas.transaction.dto.CreateTransactionRequest;
 import com.finanzas.transaction.dto.TransactionResponse;
-
+import com.finanzas.transaction.dto.UpdateTransactionRequest;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/transactions")
@@ -49,6 +41,15 @@ public class TransactionController {
     public ResponseEntity<TransactionResponse> getTransaction(@PathVariable Long id) {
         TransactionResponse transaction = transactionService.getTransactionById(id);
         return ResponseEntity.ok(transaction);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<TransactionResponse> updateTransaction(
+        @PathVariable Long id,
+        @Valid @RequestBody UpdateTransactionRequest request
+    ) {
+        TransactionResponse response = transactionService.updateTransaction(id, request);
+        return ResponseEntity.ok(response);
     }
 
     @DeleteMapping("/{id}")
