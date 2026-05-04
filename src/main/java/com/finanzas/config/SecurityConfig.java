@@ -74,7 +74,8 @@ public class SecurityConfig {
                         .allowedOriginPatterns(
                                 "http://localhost:5173",
                                 "http://localhost:3000",
-                                "https://personal-finance-management-app-six.vercel.app"
+                                "https://personal-finance-management-app-six.vercel.app",
+                                "https://fabrica-escuela-2026-frontend.vercel.app"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
