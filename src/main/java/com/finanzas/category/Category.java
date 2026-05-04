@@ -17,7 +17,7 @@ public class Category {
     @Column(nullable = false, length = 100, name = "name")
     private String name;
 
-    @Column(length = 255, name = "descripcion")
+    @Column(length = 255, name = "description")
     private String descripcion;
 
     @Column(nullable = false, length = 50)
