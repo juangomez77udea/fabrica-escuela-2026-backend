@@ -18,7 +18,7 @@ public class Category {
     private String name;
 
     @Column(length = 255, name = "description")
-    private String descripcion;
+    private String description;
 
     @Column(nullable = false, length = 50)
     private String type;
@@ -42,7 +42,7 @@ public class Category {
 
     public Category(String name, String descripcion, String type) {
         this.name = name;
-        this.descripcion = descripcion;
+        this.description = descripcion;
         this.type = type;
         this.isActive = true;
     }
@@ -59,12 +59,12 @@ public class Category {
         this.name = name;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String descripcion) {
+        this.description = descripcion;
     }
 
     public String getType() {

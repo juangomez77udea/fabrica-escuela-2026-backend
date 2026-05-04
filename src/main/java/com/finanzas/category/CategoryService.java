@@ -34,7 +34,7 @@ public class CategoryService {
     public Category updateCategory(Long id, String name, String descripcion, String type) {
         Category category = getCategoryById(id);
         category.setName(name);
-        category.setDescripcion(descripcion);
+        category.setDescription(descripcion);
         category.setType(type);
         return categoryRepository.save(category);
     }

@@ -122,7 +122,7 @@ public class TransactionService {
         CategoryDTO categoryDTO = new CategoryDTO(
             transaction.getCategory().getId(),
             transaction.getCategory().getName(),
-            transaction.getCategory().getDescripcion(),
+            transaction.getCategory().getDescription(),
             transaction.getCategory().getType(),
             transaction.getCategory().getIsActive()
         );
